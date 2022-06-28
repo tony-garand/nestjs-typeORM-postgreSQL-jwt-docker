@@ -1,5 +1,5 @@
 {
-  "name": "nestjsBoilerplate",
+  "name": "nestjs-typeorm-postgresql-jwt-docker-boilerplate",
   "version": "0.0.1",
   "description": "",
   "author": "",
