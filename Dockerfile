@@ -1,5 +1,5 @@
 # Image source
-FROM node:12-alpine
+FROM node:18-alpine
 
 # Docker working directory
 WORKDIR /app
