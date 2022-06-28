@@ -1,0 +1,5 @@
+node_modules
+dist
+pgadmin-data
+pgdata
+package-lock.json
