@@ -5,7 +5,6 @@ import * as bodyParser from 'body-parser'
 import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  // const app = await NestFactory.create(AppModule);
   const app = await NestFactory.create<NestExpressApplication>(AppModule)
   const port = +process.env.APP_PORT || 3000
   app.setGlobalPrefix('api')
@@ -13,10 +12,9 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('Todo APP')
-    .setDescription('Todo API documentation')
+    .setTitle('Grape Alpaca Broker API')
     .setVersion('1.0')
-    .addTag('Todo')
+    .addTag('AlpacaBrokerAPI')
     .build()
     
   const document = SwaggerModule.createDocument(app, options)

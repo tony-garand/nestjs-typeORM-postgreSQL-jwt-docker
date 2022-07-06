@@ -4,8 +4,8 @@ services:
     image: postgres
     restart: always
     environment: 
-      - POSTGRES_USER=${DATABASE_USER}
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
     container_name: postgres-db
     ports: 
@@ -16,40 +16,26 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
-    image: tusharchy/nest-and-postgres-application:latest
+    image: nest-app
     environment: 
       - DB_TYPE=${DB_TYPE}
-      - POSTGRES_HOST=${POSTGRES_HOST}
-      - POSTGRES_USER=${DATABASE_USER}
-      - POSTGRES_PASS=${DATABASE_PASSWORD}
+      - POSTGRES_HOST=${DB_HOST}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASS=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_SYNC=true
       - JWT_SECRET=${JWT_SECRET}
-      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_PORT=${DB_PORT}
       - APP_EXPIRES=${APP_EXPIRES}
       - APP_PORT=${APP_PORT}
     ports: 
-      - "3000:3000" # expose-to-the-world : only-in-the-docker
-    container_name: nest-todo-app-be
+      - "3000:3000"
+    container_name: nest-app
     depends_on: 
       - db
     volumes: 
       - .:/app
       - /app/node_modules
-  pgadmin:
-    image: dpage/pgadmin4
-    restart: always
-    container_name: nest-pgadmin4
-    environment: 
-      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
-      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
-      - PGADMIN_LISTEN_PORT=${PGADMIN_LISTEN_PORT}
-    ports: 
-      - "8080:80"
-    volumes: 
-      - ./pgadmin-data:/var/lib/pgadmin
-    depends_on: 
-      - db
 volumes:
   pgdata:
   pgadmin-data:

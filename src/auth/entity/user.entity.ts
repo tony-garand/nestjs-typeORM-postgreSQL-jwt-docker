@@ -1,6 +1,5 @@
 import { BaseEntity, Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryGeneratedColumn, Unique } from "typeorm";
 import * as bcrypt from "bcryptjs"
-import { Todo } from "../../todo/entity/todo.entity";
 import { UserInfo } from "../../user/entity/user-info.entity";
 
 @Entity()
@@ -18,9 +17,6 @@ export class User extends BaseEntity {
 
     @Column()
     salt: string
-
-    @OneToMany(type => Todo, todo => todo.user, { eager: true })
-    todo: Todo[]
 
     @OneToOne(type => UserInfo, { eager: true })
     @JoinColumn()
