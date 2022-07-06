@@ -13,8 +13,6 @@ A simple TODO application under Docker environment.
 * JWT
 * Docker
 
-Go to [Medium](https://tushar-chy.medium.com/a-simple-todo-application-with-nestjs-typeorm-postgresql-swagger-pgadmin4-jwt-and-docker-caa2742a4295) to get the full tutorial.
-
 # Running the app on docker
 ## Docker build & start
 
