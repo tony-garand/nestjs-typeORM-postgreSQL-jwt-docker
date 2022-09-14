@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from "typeorm";
-import { ConflictException, InternalServerErrorException } from "@nestjs/common";
+import { ConflictException, Injectable, InternalServerErrorException } from "@nestjs/common";
 import * as bcrypt from 'bcryptjs'
 
 import { SignupCredentialsDto } from "../dto/signup-credentials.dto";
@@ -8,8 +8,9 @@ import { User } from "../entity/user.entity";
 import { UserInfo } from "../../user/entity/user-info.entity";
 import { JwtPayload } from "../interface/jwt-payload.interface";
 
+@Injectable()
 export class UserRepository extends Repository<User> {
-    async signUp(signupCredentialsDto: SignupCredentialsDto): Promise<{ message: string }> {
+    public async signUp(signupCredentialsDto: SignupCredentialsDto): Promise<{ message: string }> {
         const { username, password } = signupCredentialsDto
 
         const user = new User()
@@ -34,7 +35,7 @@ export class UserRepository extends Repository<User> {
         }
     }
 
-    async validateUserPassword(signinCredentialDto: SignInCredentialsDto): Promise <JwtPayload> {
+    public async validateUserPassword(signinCredentialDto: SignInCredentialsDto): Promise <JwtPayload> {
         const { username, password } = signinCredentialDto
         const auth = await this.findOne({where: {username}})
 
@@ -47,8 +48,6 @@ export class UserRepository extends Repository<User> {
             return null
         }
     }
-
-
 
     private async hashPassword(password: string, salt: string): Promise<string>{
         return bcrypt.hash(password, salt)

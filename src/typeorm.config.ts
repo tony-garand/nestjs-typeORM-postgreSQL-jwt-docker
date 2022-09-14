@@ -6,7 +6,7 @@ const typeOrmConfig: TypeOrmModuleOptions = {
     port: 5432,
     username: 'postgres',
     password: 'postgres',
-    database: 'tododb',
+    database: 'datawell',
     entities: [__dirname + '/**/*.entity.ts', __dirname + '/**/*.entity.js'],
     synchronize: true,
 }
