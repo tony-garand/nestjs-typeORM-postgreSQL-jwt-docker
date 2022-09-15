@@ -3,13 +3,14 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthController } from './auth.controller';
-import { UserRepository } from './repository/user.repository';
+import { User } from './entity/user.entity';
 import { AuthService } from './service/auth.service';
 import { JwtStrategy } from './jwt-strategy';
 
 @Global()
 @Module({
     imports: [
+        TypeOrmModule.forFeature([User]),
         PassportModule.register({ defaultStrategy: 'jwt' }),
         JwtModule.register({
             secret: process.env.JWT_SECRET,
@@ -17,7 +18,7 @@ import { JwtStrategy } from './jwt-strategy';
                 expiresIn: +process.env.APP_EXPIRES
             }
         }),
-        TypeOrmModule.forFeature([UserRepository])
+        
     ],
     controllers: [AuthController],
     providers: [
