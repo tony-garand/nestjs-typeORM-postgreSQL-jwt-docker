@@ -1,6 +1,5 @@
 import { ConflictException, Injectable, InternalServerErrorException, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { InjectRepository } from "@nestjs/typeorm";
 import { UserInfo } from "src/user/entity/user-info.entity";
 import { SignInCredentialsDto } from "../dto/signin-credentials.dto";
 import { SignupCredentialsDto } from "../dto/signup-credentials.dto";
@@ -56,7 +55,6 @@ export class AuthService {
 
     public async validateUserPassword(signinCredentialDto: SignInCredentialsDto): Promise <JwtPayload> {
         const { username, password } = signinCredentialDto
-        const user = new User()
         const auth = await User.findOne({where: {username}})
 
         if (auth && await auth.validatePassword(password)) {
