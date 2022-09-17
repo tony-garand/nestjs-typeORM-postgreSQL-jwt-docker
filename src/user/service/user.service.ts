@@ -23,8 +23,6 @@ export class UserService {
     ): Promise<userInfoData> {
         const userInfo = await this.getUser(user)
         
-        if (userInfoDto.address) userInfo.address = userInfoDto.address
-        if (userInfoDto.petName) userInfo.petName = userInfoDto.petName
         if (userInfoDto.photo) userInfo.photo = userInfoDto.photo
         if (userInfoDto.modified_photo) userInfo.modified_photo = userInfoDto.modified_photo
         
