@@ -24,7 +24,6 @@ export class UserService {
         const userInfo = await this.getUser(user)
         
         if (userInfoDto.photo) userInfo.photo = userInfoDto.photo
-        if (userInfoDto.modified_photo) userInfo.modified_photo = userInfoDto.modified_photo
         
         await userInfo.save()
         return userInfo

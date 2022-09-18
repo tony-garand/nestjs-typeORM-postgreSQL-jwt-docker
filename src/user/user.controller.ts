@@ -50,7 +50,6 @@ export class UserController {
     ):Promise<userInfoData> {
         if (file) {
             userInfoDto.photo = file.originalname
-            userInfoDto.modified_photo = file.filename
         }
 
         return this.userService.updateUserProfile(user, userInfoDto)

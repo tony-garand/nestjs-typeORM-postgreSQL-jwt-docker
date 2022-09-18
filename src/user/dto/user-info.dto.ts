@@ -12,9 +12,4 @@ export class UserInfoDto {
         required: false
     })
     photo: string
-    
-    @ApiProperty({
-        required: false
-    })
-    modified_photo: string
 }
