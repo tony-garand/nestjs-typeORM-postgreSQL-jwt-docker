@@ -38,4 +38,3 @@ services:
       - /app/node_modules
 volumes:
   pgdata:
-  pgadmin-data:

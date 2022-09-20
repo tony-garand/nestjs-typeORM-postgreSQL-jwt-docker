@@ -4,12 +4,10 @@
 
 ## Description
 
-A simple TODO application under Docker environment.
 * NestJS
 * TypeORM
 * PostgreSQL
 * Swagger
-* PGadmin4
 * JWT
 * Docker
 
