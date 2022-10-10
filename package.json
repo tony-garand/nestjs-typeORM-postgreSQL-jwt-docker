@@ -26,7 +26,7 @@
     "typeorm:revert": "npm run typeorm migration:revert"
   },
   "dependencies": {
-    "@nestjs/common": "9.0.11",
+    "@nestjs/common": "9.1.4",
     "@nestjs/core": "9.0.1",
     "@nestjs/jwt": "9.0.0",
     "@nestjs/passport": "9.0.0",
@@ -67,7 +67,7 @@
     "eslint-plugin-prettier": "4.1.0",
     "jest": "28.1.1",
     "prettier": "2.7.1",
-    "supertest": " 6.2.3",
+    "supertest": " 6.2.4",
     "ts-jest": "28.0.5",
     "ts-loader": "9.3.1",
     "ts-node": "10.8.1",
