@@ -10,8 +10,5 @@ const typeOrmConfig: TypeOrmModuleOptions = {
     entities: [__dirname + '/**/*.entity.ts', __dirname + '/**/*.entity.js'],
     synchronize: true,
 }
-console.log(process.env);
-
-console.log(typeOrmConfig);
 
 export = typeOrmConfig
