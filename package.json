@@ -26,12 +26,12 @@
     "typeorm:revert": "npm run typeorm migration:revert"
   },
   "dependencies": {
-    "@nestjs/common": "9.3.8",
+    "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.3.9",
     "@nestjs/jwt": "10.0.2",
     "@nestjs/passport": "9.0.3",
     "@nestjs/platform-express": "9.3.12",
-    "@nestjs/serve-static": "3.0.0",
+    "@nestjs/serve-static": "3.0.1",
     "@nestjs/swagger": "6.3.0",
     "@nestjs/typeorm": "9.0.1",
     "bcryptjs": "2.4.3",
