@@ -31,7 +31,7 @@
     "@nestjs/jwt": "10.0.3",
     "@nestjs/passport": "10.0.2",
     "@nestjs/platform-express": "9.4.3",
-    "@nestjs/serve-static": "3.0.1",
+    "@nestjs/serve-static": "4.0.0",
     "@nestjs/swagger": "7.1.12",
     "@nestjs/typeorm": "10.0.0",
     "bcryptjs": "2.4.3",
