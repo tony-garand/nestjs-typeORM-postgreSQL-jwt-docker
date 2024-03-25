@@ -29,7 +29,7 @@
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
     "@nestjs/jwt": "10.2.0",
-    "@nestjs/passport": "10.0.2",
+    "@nestjs/passport": "10.0.3",
     "@nestjs/platform-express": "9.4.3",
     "@nestjs/serve-static": "4.0.0",
     "@nestjs/swagger": "7.1.17",
